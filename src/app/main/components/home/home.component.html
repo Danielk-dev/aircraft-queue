@@ -1,0 +1,39 @@
+<div id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-8 offset-sm-2 offset-md-3 px-xl-5">
+        <div class="wrapper pt-4 px-lg-5">
+
+          <div class="mt-4 pb-4">
+            <button (click) = "addAircraft()"  mat-raised-button class="primaryBtn w-100">Add an Aircraft</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngFor="let ta of stagesTasks;let i = index" class="p-4" >
+    <h2>{{stagesNames[i]}}</h2>
+    <div class="mainDiv p-2">
+      <mat-card  *ngFor="let t of ta; let i = index" class="custom-card mr-2">
+        <mat-card-header>
+          <mat-card-title>{{t.name}}</mat-card-title>
+          <mat-card-subtitle>{{t.type}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content style= "display: grid;">
+          <p>
+            {{t.size}}
+          </p>
+          <button (click)="launch(t)" *ngIf="i == 0 && t.stage == 0" mat-raised-button class="launchBtn">Launch</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+
+</div>
+
+
+

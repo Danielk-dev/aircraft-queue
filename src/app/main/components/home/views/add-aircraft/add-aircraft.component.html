@@ -1,0 +1,40 @@
+<div>
+  <div class="modal-header">
+    <div class="align-items-center justify-content-between w-100">
+      <h5 class="m-0 cs">Add an Aircraft</h5>
+    </div>
+  </div>
+
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div class="mt-2 form-row">
+        <input [(ngModel)]="aircraft.name" type="text" class="custom form-control custom-textbox" placeholder="Enter Aircraft Name">
+      </div>
+
+      <div class="mt-2 form-row">
+        <select [(ngModel)]="aircraft.type" class="form-control custom">
+          <option disabled value="" selected>Select Aircraft Type</option>
+          <option> Passenger </option>
+          <option> Cargo </option>
+        </select>
+      </div>
+
+      <div class="mt-2 form-row">
+        <select [(ngModel)]="aircraft.size" class="form-control custom">
+          <option disabled value="" selected>Select Aircraft Size</option>
+          <option> Small </option>
+          <option> Large </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="clearfix">
+      <div class="ml-3 text-center">
+        <button (click)="onClick(aircraft)"  type="submit" mat-raised-button class="bg customBtn mr-3">Done</button>
+        <button (click)="onClick()" mat-raised-button class="black customBtn mr-3">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
